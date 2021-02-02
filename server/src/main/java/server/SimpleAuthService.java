@@ -2,6 +2,7 @@ package server;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class SimpleAuthService implements AuthService {
 
@@ -32,11 +33,12 @@ public class SimpleAuthService implements AuthService {
     @Override
     public String getNicknameByLoginAndPassword(String login, String password) {
         for (UserData user : users) {
-            if(user.login.equals(login) && user.password.equals(password)){
+            if (user.login.equals(login) && user.password.equals(password)) {
                 return user.nickname;
             }
         }
 
         return null;
     }
+
 }
